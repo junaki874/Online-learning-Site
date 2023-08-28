@@ -9,7 +9,7 @@ export default function Excel() {
 </p>
 <p className="text-black pt-4 text-xl">₹899.00/mo.</p>
 <div className="pt-4"> 
-<button className="h-8 w-20 bg-orange-400 text-white  rounded-2xl"> Subscribe</button>
+<button className="h-8 w-20 bg-orange-400 hover:bg-green-500 text-white  rounded-2xl"> Subscribe</button>
 
 </div>
 
