@@ -1,61 +1,73 @@
-
-
 import React from 'react';
+//import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import Home from './components/Home';
+import SignUp from './components/SignUp';
 import back from "./images/bk.png"
 
 
-function App() {
-  return (
-   
+const App =()=>{
+    return (
+        <>
+        <section style={{backgroundImage: `url(${back})` }} className="h-screen w-screen bg-red-200" >
+<Router>
+
+       
+
+<nav className="bg-white md:flex md:items-center md:justify-between sm:flex sm:items-center "> 
+
+<div> <h1 className="text-orange-500 font-medium md:text-4xl sm:text-xs font-[Poppins] md:px-8 md:pt-5 sm:px-2 sm:pt-3"> SmartEd</h1></div>
+
+<div className="md:flex md:pl-5 sm:flex sm:pl-2"> 
+
+    <ul className="md:flex md:justify-between sm::justify-between xs::justify-between md:items-center md:pl-5 sm:flex sm:items-center sm:pl-2">
+     <li className="md:mx-4 sm:mx-1 md:flex sm:flex">
+          <Link to="/Home" className="md:text-xl sm:text-xs hover:text-orange-600 duration-500"> Courses</Link>
+          </li>
+          <li className="md:mx-4 sm:mx-1">
+          <Link to="/Home" className="md:text-xl md:flex sm:flex sm:text-xs hover:text-orange-600 duration-500"> Ask Edi</Link>
+          </li>
+          <li className="md:mx-4 sm:mx-1">
+          <Link to="/Home" className="md:text-xl sm:text-xs md:flex sm:flex hover:text-orange-600 duration-500"> Flashcards</Link>
+          </li>
+          <li className="md:mx-4 sm:mx-1">
+          <Link to="/Home" className="md:text-xl md:flex sm:flex sm:text-xs hover:text-orange-600 duration-500"> Practice Tests</Link>
+          </li>
+       
+    </ul>
+    <ul className="md:flex sm:flex md:pl-30 sm:pl-2 md:mx-20 sm:mx-4" >
+    <li className="md:mx-2 sm:mx-1">
+          <Link to="/Home" className="md:text-xl sm:text-xs hover:text-orange-600 duration-500"> Help  </Link>
+          </li>
+          
+          <li className="md:mx-2 sm:mx-1 ">
+              <p  className=" md:text-xl sm:text-xs hover:text-orange-600 duration-500"> | </p>
+          </li> 
+          <li className="md:mx-2 sm:mx-1">
+          <Link to="/SignUp" className=" md:text-xl sm:text-xs hover:text-orange-600 duration-500">  Sign in</Link>
+          </li>
+        </ul> 
+
+       
+</div>
+
+</nav>
 
 
+<Switch>
+       <Route path="/Home"> 
+          <Home/>
+        </Route>
 
-<section style={{ backgroundImage: `url(${back})`}} className="dark:bg-gray-900">
-  <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <Route path="/SignUp">
+       <SignUp/>
+        </Route>
     
-      <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-          <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                  Create and account
-              </h1>
-              <form class="space-y-4 md:space-y-6" action="#">
-                  <div>
-                      <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-                      <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required=""/>
-                  </div>
-                  <div>
-                      <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                      <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=""/>
-                  </div>
-                  <div>
-                      <label for="confirm-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm password</label>
-                      <input type="confirm-password" name="confirm-password" id="confirm-password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=""/>
-                  </div>
-                  <div class="flex items-start">
-                      <div class="flex items-center h-5">
-                        <input id="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required=""/>
-                      </div>
-                      <div class="ml-3 text-sm">
-                        <label for="terms" class="font-light text-gray-500 dark:text-gray-300">I accept the <a class="font-medium text-primary-600 hover:underline dark:text-primary-500" href="/">Terms and Conditions</a></label>
-                      </div>
-                  </div>
-                  <button type="submit" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create an account</button>
-                  <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                      Already have an account? <a href="/" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
-                  </p>
-              </form>
-          </div>
-      </div>
-  </div>
+</Switch>
+</Router>
 </section>
-
-
-
-  );
+        </>
+    )
 }
-
-
-
-    
 
 export default App;

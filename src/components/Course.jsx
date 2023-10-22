@@ -1,12 +1,73 @@
-import React from 'react'
+import React from 'react';
+//import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import Home from './components/Home';
+import SignUp from './components/SignUp';
+import back from "./images/bk.png"
 
-export default function Course() {
-  return (
-    <div>Course
+
+const App =()=>{
+    return (
+        <>
+        <section style={{backgroundImage: `url(${back})` }} className="h-screen w-screen bg-red-200" >
+<Router>
+
+       
+
+<nav className="bg-white md:flex md:items-center md:justify-between sm:flex sm:items-center "> 
+
+<div> <h1 className="text-orange-500 font-medium md:text-4xl sm:text-xs font-[Poppins] md:px-8 md:pt-5 sm:px-2 sm:pt-3"> SmartEd</h1></div>
+
+<div className="md:flex md:pl-5 sm:flex sm:pl-2"> 
+
+    <ul className="md:flex md:justify-between sm::justify-between xs::justify-between md:items-center md:pl-5 sm:flex sm:items-center sm:pl-2">
+     <li className="md:mx-4 sm:mx-1 md:flex sm:flex">
+          <Link to="/Home" className="md:text-xl sm:text-xs hover:text-orange-600 duration-500"> Courses</Link>
+          </li>
+          <li className="md:mx-4 sm:mx-1">
+          <Link to="/Home" className="md:text-xl md:flex sm:flex sm:text-xs hover:text-orange-600 duration-500"> Ask Edi</Link>
+          </li>
+          <li className="md:mx-4 sm:mx-1">
+          <Link to="/Home" className="md:text-xl sm:text-xs md:flex sm:flex hover:text-orange-600 duration-500"> Flashcards</Link>
+          </li>
+          <li className="md:mx-4 sm:mx-1">
+          <Link to="/Home" className="md:text-xl md:flex sm:flex sm:text-xs hover:text-orange-600 duration-500"> Practice Tests</Link>
+          </li>
+       
+    </ul>
+    <ul className="md:flex sm:flex md:pl-30 sm:pl-2 md:mx-20 sm:mx-4" >
+    <li className="md:mx-2 sm:mx-1">
+          <Link to="/Home" className="md:text-xl sm:text-xs hover:text-orange-600 duration-500"> Help  </Link>
+          </li>
+          
+          <li className="md:mx-2 sm:mx-1 ">
+              <p  className=" md:text-xl sm:text-xs hover:text-orange-600 duration-500"> | </p>
+          </li> 
+          <li className="md:mx-2 sm:mx-1">
+          <Link to="/SignUp" className=" md:text-xl sm:text-xs hover:text-orange-600 duration-500">  Sign in</Link>
+          </li>
+        </ul> 
+
+       
+</div>
+
+</nav>
 
 
+<Switch>
+       <Route path="/Home"> 
+          <Home/>
+        </Route>
 
-<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque architecto veritatis blanditiis numquam aspernatur ducimus dicta vitae animi alias quisquam fugiat quaerat nihil pariatur officiis omnis, aut eveniet facilis vero autem consectetur doloremque sunt. Ex similique blanditiis perspiciatis. Soluta, ipsam aspernatur voluptatibus id libero fugit, quas optio enim harum eveniet ullam pariatur quis iusto vitae excepturi obcaecati consequuntur ducimus, hic facere! Ea perferendis iste corrupti, exercitationem molestiae quod laborum aspernatur, aut iure a quas ratione fuga nostrum. Quidem eligendi rem nulla necessitatibus dolor quisquam omnis saepe exercitationem doloremque vel, quia autem voluptatum animi sequi illum fugiat quod iusto eveniet eaque officiis ab corporis, nisi quam aut. Neque quod voluptate tempora earum porro laudantium amet sed est nulla architecto quas dolorem ipsam laboriosam, adipisci deserunt assumenda quam accusamus? Nostrum, sequi voluptate odio sed dignissimos quas, quos voluptatum temporibus eveniet est ad nesciunt fugit explicabo beatae natus praesentium non nobis consectetur maiores commodi? Dicta soluta animi pariatur amet odio unde veniam cumque quibusdam! Provident ad beatae quaerat vel quisquam non dolore libero quasi eum iure, eaque, architecto tempore deleniti impedit soluta fugiat? Vel debitis natus tenetur velit quod ducimus, ratione eligendi quia in officia laudantium obcaecati, omnis, soluta exercitationem illum consequatur. Delectus! </h1>
-    </div>
-  )
+        <Route path="/SignUp">
+       <SignUp/>
+        </Route>
+    
+</Switch>
+</Router>
+</section>
+        </>
+    )
 }
+
+export default App;

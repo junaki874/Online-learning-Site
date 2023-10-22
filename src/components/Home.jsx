@@ -1,27 +1,21 @@
+
 import React from 'react'
 import "../main.css"
 import Toutorial from './Toutorial'
-import Navbar from './Navber'
 import AboutCourse from "./AboutCourse.jsx"
-import Card from './Card'
-import CardData from './CardData'
 import Excel from './Excel'
-import FooterNav from './FooterNav'
+//import FooterNav from './FooterNav'
 import AskEdi from './AskEdi'
 import LearningWithEdi from './LearningWithEdi'
 import Background from './Background'
+import CardSession from './CardSession'
 
- const Home=()=> {
-
-
-
+const Home=()=> {
   return (
-    <div>
-        <body id="home">  
      <div>
-
-<Navbar/>
-
+         
+         <div> 
+         
 <div className="md:flex sm:flex  md:items-center sm:items-center md:justify-center sm:justify-center pl-10">
   <div className="flex "> 
   
@@ -39,12 +33,8 @@ import Background from './Background'
 
  <Background/>
 
-<div className="md:justify-center sm::justify-center md:text-center sm::text-center pt-10">
-  <h1 className="md:justify-center sm::justify-center md:text-center  md:text-4xl sm:text-xl text-black">Explore Our Live Sessions</h1>
-  <p className="text-black pt-5 md:text-xl sm:text-xs md:justify-center sm::justify-center md:text-center "> Live sessions provide an opportunity for real-time engagement and <br/>interactive learning experiences</p>
-</div> 
-
-<Card details= {CardData}/>
+ 
+<CardSession/>
 
 {/*...............video box-1.......*/ }
 
@@ -63,11 +53,11 @@ import Background from './Background'
 
   <AboutCourse/>
 
-{/*...............footer.......*/ }
-<FooterNav/>
+{/*...............footer<FooterNav/>.......*/ }
 
-</body>
-    </div>
+         
+          </div>
+
   )
 }
-export default Home;
+export default  Home;

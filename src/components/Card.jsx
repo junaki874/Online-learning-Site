@@ -18,7 +18,7 @@ const Card =(props)=> {
     <p className="md:text-sm sm:text-xs md:pt-6 sm:pt-3 "> {value.tittle}</p>
     <p className="md:text-sm sm:text-xs  md:pt-6 sm:pt-3 ">{value.description}
 </p>
-       <a href="home" className="text-orange-500 text-xs  md:pt-5 sm:pt-2 "> {value.learn}</a>
+       <a href="login" className="text-orange-500 text-xs  md:pt-5 sm:pt-2 "> {value.learn}</a>
   </div>
   </div>
 </section>
